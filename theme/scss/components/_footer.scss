@@ -1,0 +1,199 @@
+/*============== Footer CSS ================*/
+.footer-area {
+    @extend %secondary-bg-color;
+    color: #fff;
+    padding-top: 50px;
+    z-index: 2;
+    .offer-btns{
+        margin-top: 10px !important;
+    }
+    @include all-below-med{
+        padding-top: 30px;
+     }
+}
+.footer-area:after {
+    position: absolute;
+    left: 0;
+    top: -70px;
+    width: 100%;
+    height: 130px;
+    @extend %secondary-bg-color;
+    content: "";
+    transform:skewY(1.7deg);
+    z-index: -1;
+    @include all-below-med{
+        top: -30px;
+    }
+}
+.footer-social-icons h3 {
+    font-size: 21px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    @include all-below-med{
+       font-size: 18px;
+    }
+    @include all-below-mobile-lg{
+        margin-bottom: 15px;
+    }
+    
+}
+.social-icons a {
+    width: 35px;
+    height: 35px;
+    border: 2px solid #fff;
+    display: inline-block;
+    border-radius: 50px;
+    text-align: center;
+    line-height: 33px;
+    margin-left: 10px;
+    @extend %basetransition2;
+    @include all-below-med{
+        margin-left: 5px;
+    }
+}
+.social-icons a:hover {
+    @extend %primary-bg-color;
+    color: #fff;
+    @extend %primary-border-color;
+}
+.footer-widgets {
+    padding: 35px 0 50px;
+    border-top: 1px solid #575A68;
+    margin-top: 35px;
+    border-bottom: 1px solid #575A68;
+    @include all-below-med{
+        padding: 35px 0 20px;
+    }
+}
+.copyright-section {
+    font-size: 13px;
+    padding: 35px 0;
+    @include all-below-med{
+        padding: 20px 0;
+    }
+}
+.single-footer-widget h4 {
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+}
+.single-footer-widget ul li a {
+    color: #BEBFC2;
+    padding: 4px 0;
+    margin-bottom: 3px;
+    @extend %basetransition1;
+}
+.single-footer-widget ul li:first-child a {
+    padding-top: 0;
+}
+.single-footer-widget ul li a:hover {
+    @extend %primary-color;
+}
+.single-footer-widget {
+    color: #BEBFC2;
+    font-size: 14px;
+    @include all-below-med{
+        margin-bottom: 20px;
+        text-align: center;
+    }
+}
+.single-footer-widget.contact-info ul li {
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 15px;
+    @include all-below-med{
+        display: inline-block;
+    }
+}
+.single-footer-widget.contact-info ul li i {
+    position: absolute;
+    left: 0;
+    top: 0px;
+    font-size: 25px;
+}
+.single-footer-widget.contact-info ul li i.fa-envelope {
+    font-size: 22px;
+    top: 4px;
+}
+
+
+.single-footer-widget .boxed-btn {
+    border-color: #8F919A;
+    color: #8F919A;
+    padding: 10px 25px 10px 25px;
+    font-weight: 300;
+}
+.single-footer-widget .boxed-btn:hover {
+    @extend %primary-border-color;
+    color: #fff;
+}
+.single-footer-widget.opening-time {
+    text-transform: uppercase;
+}
+.single-footer-widget.opening-time span {
+    text-transform: lowercase;
+    display: block;
+    margin-top: 10px;
+}
+
+.copyright-section {
+    .copy-right-text{
+        @include all-below-med{
+            flex-basis: 100%;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+    }
+    .autohq-logo {
+        @include all-below-med{
+            flex-basis: 100%;
+            text-align: center;
+        }
+        img {
+            max-width: 117px;
+            margin-top: -8px;
+            margin-left: 10px;
+            opacity: .7;
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+// scrollTop
+.scrollTop {
+    right: 2%;
+    bottom: -40px;
+    width: 40px;
+    height: 40px;
+    z-index: 9;
+    @extend %posfixed;
+    @extend %secondary-bg-color;
+    @extend %displayblock;
+    @extend %white-color;
+    @extend %textcenter;
+    @extend %basetransition2;
+    @extend %invisible;
+    font-size: 25px;
+    line-height: 40px;
+    &.scrollBtn{
+        @extend %visible;
+        bottom: 40px;
+    }
+    &:hover{
+        @extend %white-color;
+        @extend %primary-bg-color;
+    }
+}
+@include all-below-mobile-lg{
+    .footer-area .top-row .col-md-3, .footer-area .top-row .col-md-2 {
+        flex-basis: 50%;
+    }
+    .footer-area .top-row .col-md-7 {
+        display: none;
+    }
+}
+
+

@@ -1,0 +1,458 @@
+/*=============== Header CSS ==================*/
+.stansted-logo {
+    img {
+        margin-right: 10px;
+        max-width: 102px;
+        @include all-below-med{
+            max-width: 55px;
+            margin-right: 5px;
+        }
+    }
+    a{
+        color: #fff;
+        &:hover {
+            color: #fff;
+        }
+    }
+    h2 {
+        font-size: 30px;
+        text-transform: uppercase;
+        line-height: 1;
+        margin: 0;
+        @include all-below-med{
+            font-size: 18px;
+        }
+        span {
+            display: block;
+            font-size: 24px;
+            margin: 10px 0 10px;
+            line-height: 1;
+            @include all-below-med{
+                font-size: 15px;
+                margin: 5px 0 5px;
+            }
+        }
+    }
+    h3 {
+        font-size: 18px;
+        font-weight: 400;
+        margin: 6px 0 0;
+        text-transform: uppercase;
+        @include all-below-med{
+            font-size: 12px;
+            margin: 0px 0 0;
+        }
+    }
+    ul {
+        li {
+            width: 95px;
+            height: 4px;
+            @extend %primary-bg-color;
+            margin-bottom: 3px;
+            @include all-below-med{
+                margin-bottom: 1px;
+                height: 2px;
+                width: 58px;
+            }
+            &:nth-child(2) {
+                background-color: #969696;
+                height: 3px;
+                @include all-below-med{
+                    height: 1px;
+                }
+            }
+            &:nth-child(3) {
+                height: 1px;
+                background-color: #fff;
+            }
+        }
+    }
+}
+
+
+.header {
+    @extend %white-color;
+    @extend %posabsolute;
+    @extend %w100;
+    z-index: 9999;
+    left: 0;
+    top: 40px;
+    height: 133px;
+    @include all-below-med{
+        height: 85px;
+        position: relative;
+        top: 0;
+    }
+    
+    // .header-area
+    .header-area {
+        @include all-below-med{
+            background-color: #2D3142;
+            .col-lg-3{
+                width: 163px;
+                margin: 0 auto;
+                margin-top: 5px;
+            }
+        }
+        .site-logo {
+            height: 130px;
+            @include all-below-med{
+               height: 85px;
+            }
+            img{
+                max-width: 240px;
+                @include all-below-med{
+                    max-width: 200px;
+                }
+                @include all-below-mobile-lg{
+                    max-width: 170px;
+                }
+            }
+        }
+        .header-top {
+            margin-left: 98px;
+            @include mx-large-desktops{
+                margin-left: 83px;
+            }
+            .header-social-icons {
+                a {
+                    font-size: 20px;
+                    width: 25px;
+                    display: inline-block;
+                    margin-right: 10px;
+                    @extend %basetransition1;
+                    &:hover {
+                        @extend %primary-color;
+                    }
+                }
+            }
+            .header-phone-number {
+                @include all-below-med{
+                    position: absolute !important;
+                    left: 15px;
+                    top: -59px;
+                    width: 45px;
+                    height: 45px;
+                    border: 1px solid #fff;
+                    text-align: center;
+                    border-radius: 50px;
+                }
+                a {
+                    font-size: 21px;
+                    font-weight: 500;
+                    font-family: "Oswald", sans-serif;
+                    @extend %basetransition1;
+                    @include all-below-med{
+                        width: 100%;
+                        height: 100%;
+                    }
+                    i {
+                        position: absolute;
+                        left: -27px;
+                        top: 0px;
+                        font-size: 30px;
+                        @include all-below-med{
+                           position: relative;
+                           left: 0;
+                           font-size: 20px;
+                           line-height: 43px;
+                        }
+                    }
+                    &:hover {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// .mainmenu
+.mainmenu ul {
+    @include all-below-med{
+        display: none;
+    }
+}
+.mainmenu ul li {
+    @extend %displayinline;
+    @extend %posrelative;
+    padding-bottom: 25px;
+    > &:last-child{
+        a{
+            padding-right: 0;
+        }
+    }
+    > &:first-child{
+        a{
+            padding-left: 0;
+        }
+    }
+}
+.mainmenu ul li >  a {
+    font-size: 16px;
+    padding: 26px 25px;
+    color: #d6d6d6;
+    @extend %basetransition1;
+    @include mx-large-desktops {
+        padding: 26px 12px;
+    }
+    @include mx-desktops{
+        padding: 26px 5px;
+    }
+}
+.mainmenu ul li:hover > a {
+    @extend %white-color;
+}
+
+// Dropdown CSS
+.mainmenu ul li ul {
+    @extend %posabsolute;
+    left: 0;
+    top: 130px;
+    width: 260px;
+    @extend %white-bg-color;
+    z-index: 9999;
+    @extend %invisible;
+    @extend %basetransition2;
+    @extend %textleft;
+    li:after{
+        background: none;
+    }
+    @include mx-desktops{
+        width: 235px;
+    }
+}
+.mainmenu ul li ul ul {
+    left: 100%;
+    top: 45px;
+    @extend %invisible;
+    li{
+        text-align: right;
+    }
+}
+.mainmenu ul li:last-child ul{
+    left: auto;
+    right: 0;
+}
+.mainmenu ul li:hover > ul {
+    top: 76px;
+    @extend %visible;
+}
+.mainmenu ul li ul li {
+    @extend %displayblock;
+    border-bottom: 1px solid #f4f4f4;
+    @extend %basetransition2;
+    padding: 0px 0;
+}
+.mainmenu ul li ul li:hover {
+    @extend %primary-border-color;
+}
+.mainmenu ul li ul li a {
+    padding: 12px 20px 12px;
+    @extend %displayblock;
+    @extend %capitalize;
+    @extend %body-color;
+    border-radius: 0;
+}
+.mainmenu ul li ul li:hover > a {
+    @extend %primary-bg-color;
+    @extend %white-color;
+}
+.mainmenu ul li ul li:hover {
+    @extend %primary-border-color;
+}
+.mainmenu ul li ul li:last-child {
+    border-bottom: 4px solid;
+    @extend %primary-border-color;
+}
+.mainmenu ul li ul li:hover ul {
+    top: 0;
+}
+
+// Sticky Header with smooth animation
+.header-area {
+    @include desktops{
+        &.fixed {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            animation:slide-down 0.7s;
+            z-index: 99;
+            height: 110px;
+            background-color: #2D3142;
+            &:after {
+                position: absolute;
+                content: "";
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                z-index: -1;
+                opacity: 1;
+            }
+            .site-logo {
+                height: 100px;
+                img{
+                    max-width: 200px;
+                }
+            }
+            .mainmenu ul li{
+                padding-bottom: 0;
+            } 
+            .mainmenu > ul > li > a {
+                padding: 43px 25px;
+                @include mx-large-desktops{
+                    padding: 43px 10px;
+                }
+                @include mx-desktops{
+                    padding: 43px 5px;
+                }
+            }
+            .mainmenu ul li:hover > ul{
+                top: 110px;
+            }
+            .header-top{
+                display: none !important;
+            }
+            .stansted-logo {
+                margin-top: 6px;
+                img {
+                    max-width: 75px;
+                }
+                h2 {
+                    font-size: 24px;
+                    span {
+                        font-size: 18px;
+                        margin: 5px 0 5px;
+                    }
+                }
+                h3 {
+                    font-size: 14px;
+                    margin: 3px 0px 0;
+                }
+            }
+        }
+    }
+    @include all-below-med{
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        z-index: 9;
+        height: 85px;
+    }
+}
+@keyframes slide-down {
+    0% {
+        // opacity: 0;
+        transform: translateY(-100%);
+    } 
+    100% {
+        // opacity: 1;
+        transform: translateY(0);
+    } 
+}
+
+/* =======slicknav_menu======== */
+.slicknav_menu {
+    @include desktops{
+        display: none;
+    }
+    @extend %margin0auto;
+    @extend %posfixed;
+    background: #ddd;
+    left: 0;
+    top: -10px;
+    right: 0;
+    width: 720px;
+    z-index: 999999;
+    height: 0;
+    .slicknav_menutxt {
+        @extend %displaynone;
+    }
+    .slicknav_btn {
+        padding: 0;
+        margin: 0px 11px 0 0;
+        font-size: 30px;
+        background: none;
+        top: 37px;
+        right: 15px;
+        @include mobile-lg{
+            margin: 0px -5px 0 0;
+        }
+        @include all-mx-mobile{
+            right: 0;
+        }
+        &:hover{
+            background: none;
+        }
+        // @include mx-mobile(){
+        //     right: 0px;
+        // };
+        // @include mx-mobile-lg(){
+        //     right: 63px;
+        // };
+    }
+    .slicknav_icon {
+        margin: 0;
+        span {
+            @extend %white-bg-color;
+            @extend %borderradius0;
+            box-shadow: none;
+        }
+    }
+    .slicknav_nav {
+        padding: 10px 0;
+        background: #fff;
+        @extend %posabsolute;
+        left: 0;
+        top: 95px;
+        width: 100%;
+        // box-shadow: 0px 3px 8px -7px #000;
+        box-shadow:2px 10px 30px -14px #000;
+        @include all-below-mobile-lg{
+            // top: 90px;
+        }
+        i{
+            @include all-below-med{
+                display: none;
+            }
+        }
+        .slicknav_row {
+            padding: 0;
+            a{
+                padding: 10px 15px;
+                @extend %displayinline;
+            }
+        }
+        .slicknav_row{
+            @extend %borderradius0;
+            &:hover {
+                @extend %borderradius0;
+            }
+        }
+    }
+    a {
+        padding: 10px 15px;
+        font-size: 16px;
+        color: #333;
+        @extend %borderradius0;
+        &:hover {
+            @extend %borderradius0;
+        }
+    }
+    @include all-below-mobile-lg(){
+        width: 540px;
+    };
+    @include all-mx-mobile(){
+        width: 100%;
+    };
+}
+
+.alert-message-section {
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+
